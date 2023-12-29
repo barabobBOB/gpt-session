@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Post</title>
+</head>
+<body>
+    <h1>Create a New Post</h1>
+
+    {% if post_saved %}
+        <p class="success-message">게시글이 성공적으로 저장되었습니다!</p>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save Post</button>
+    </form>
+</body>
+</html>
+
